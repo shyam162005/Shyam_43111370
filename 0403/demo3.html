@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo3</title>
+
+
+    <style>
+        body {
+            background-color:black;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header, .footer{
+            background-color:rgb(192, 187, 187);
+            color: black;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .content-box {
+            background-color: #e6cba8;
+            padding: 20px;
+            width: 45%;
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .login-options {
+            width: 45%;
+            text-align: center;
+        }
+        .login-options h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .login-options button {
+            display: block;
+            width: 100px;
+            margin: 10px auto;
+            padding: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .box{
+            width: 400px;
+            height: 450px;
+            background-color: rgb(192, 187, 187);
+            color: black;
+                        
+        }
+    </style>   
+</head>
+<body>
+    <div class="header">
+        <h1 align="center">Student's Connect</h1>
+    </div>
+
+    <div style="padding-left: 50px; padding-top: 10px;" class="container">
+        <div class="box">
+            <h1 align="center" style="padding-top: 50px; font-size: 50px; font-family: sans-serif;">About us</h1>
+            <p align="center" style="padding: 10px; font-size: medium; font-family: sans-serif;">"Student's Connect" is a dedicated platform designed to enhance communication, collaboration, and accessibility
+                for students. Our mission is to create a seamless digital space where students can interact with their peers,
+                access academic resources, and stay updated with important campus announcements. With a user-friendly interface
+                and secure login system, we aim to simplify student engagement and provide an efficient way to manage academic 
+                and extracurricular activities. Whether it’s connecting with faculty, participating in discussions, or staying
+                informed about upcoming events, Student’s Connect ensures a smooth and productive experience for students in a
+                digital world.</p>
+        </div>
+        <div class="login-options">
+            <h3 style="color: azure;">New User Login</h3>
+            <button onclick="location.href='register.html'">Register</button>
+            
+            <h3 style="color: azure;">Existing User Login</h3>
+            <button onclick="location.href='login.html'">Login</button>
+        </div>
+    </div>
+    <div class="footer">
+    <p align="center">Copyrigted web page <br> @2025 @SathyabamaPlacements</p>
+    </div>
+</body>
+</body>
+</html>
