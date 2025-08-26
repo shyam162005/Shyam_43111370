@@ -1,0 +1,56 @@
+set sql_safe_updates = 0;
+show databases;
+use cse;
+show tables;
+create table employees(
+    empid int primary key,
+    empname varchar(30) not null,
+    dept varchar(10),
+    experience int,
+    salary int not null
+);
+insert into employees values
+(101,'Ajay','Testing',5,80000),
+(102,'Sanjay','Finance',4,60000),
+(103,'Megha','Developer',3,120000),
+(104,'Akash','HR',6,95000),
+(105,'Rahul','Admin',8,70000),
+(106,'Vijay','Manager',10,250000),
+(107,'Varun','Testing',7,210000),
+(108,'Priya','Developer',9,180000);
+
+select * from employees;
+
+select e1.empname as hr_employee, e1.salary as hr_salary,
+       e2.empname as dev_employee, e2.salary as dev_salary
+       from employees e1
+       join employees e2
+       on e1.salary < e2.salary
+       where e1.dept = 'HR' and e2.dept = 'Developer';
+
+select e3.empname as Testing_employee, e3.salary as Testing_salary,
+       e4.empname as Dev_employee, e4.salary as Dev_salary
+       from employees e3
+       join employees e4
+       on e3.salary < e4.salary
+       where e3.dept = 'Testing' and e4.dept = 'Developer';
+       
+update employees 
+set salary = salary + 5000 where experience >= 5 and experience < 10;
+
+update employees
+set salary = salary + 8000 where experience >= 10 and experience < 15;
+
+select * from employees where experience > 5;
+
+select dept, avg(salary) as avg_salary from employees group by dept;
+
+select dept, count(*) as emp_count from employees group by dept;
+
+select * from employees where salary > (select avg(salary) from employees); 
+
+select * from employees where salary <> 50000;
+
+select * from employees;
+    
+drop table employees;
