@@ -1,0 +1,99 @@
+package nov25;
+//import org.apache.commons.lang3.ArrayUtils;
+import java.util.*;
+
+public class arrays {
+	Scanner sc = new Scanner(System.in);
+	
+	void array(int n) {
+		int[] arr = new int[n];
+		
+		System.out.print("Enter the elements: ");
+		for(int i = 0; i < n; i++ ) {
+			arr[i] = sc.nextInt();
+		}
+		for(int i = 0; i < n; i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+	}
+	
+	void arrayList(int n) {
+		System.out.println("ArrayList:-");
+		String[] sarr = new String[n];
+		
+		System.out.println("Enter String elements: ");
+		for(int i = 0; i < n; i++) {
+			sarr[i] = sc.next();
+		}
+		
+		ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(sarr));
+		
+		for(int i = 0; i < n; i++) {
+			System.out.print(sarr[i]+" ");
+		}
+		System.out.println();
+	}
+	
+	void checkElement(int n) {
+		System.out.println("Checking whether the element is present in the array or not:-");
+		String[] arr = new String[n];
+		
+		System.out.println("Enter String elements: ");
+		for(int i = 0; i < n; i++) {
+			arr[i] = sc.next();
+		}
+		
+		System.out.print("Enter the element need to find: ");
+		String str = sc.next();
+		
+		ArrayList<String> checkElement = new ArrayList<String>(Arrays.asList(arr));
+		boolean bool = Arrays.asList(arr).contains(str);
+		
+		System.out.println(bool);
+		
+		System.out.println();
+	}
+	void concat() {
+		int[] a = {1,2,3,4,5};
+		int[] b = {9,8,7,6,5};
+		
+		int[] arr = ArrayUtils.addAll(a, b);
+		String s = Arrays.toString(arr);
+		System.out.println(s);
+	}
+	
+	void arrayListToArray() {
+		System.out.println("Converting arrayList to Array:-");
+		String[] stringArray = { "a", "b", "c", "d", "e" };
+		ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(stringArray));
+		String[] stringArr = new String[arrayList.size()];
+		arrayList.toArray(stringArr);
+
+		for (String s : stringArr) {
+			System.out.print(s + " ");
+		}
+		System.out.println();
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter the no of element: ");
+		int n = sc.nextInt();
+		
+		arrays arr = new arrays();
+		
+		System.out.println("\nDeclaring and Printing an Array:-");
+		arr.array(n);
+		
+		arr.arrayList(n);
+		
+		arr.checkElement(n);
+		
+		arr.concat();
+		
+		arr.arrayListToArray();
+		
+	}
+}
