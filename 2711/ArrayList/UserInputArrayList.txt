@@ -1,0 +1,41 @@
+package nov27;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class UserInputArrayLIst {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		try {
+			System.out.print("Enter the no of elements: ");
+			int n = sc.nextInt();
+			sc.nextLine();
+			
+			ArrayList<String> list = new ArrayList<>();
+			
+			for(int i = 0; i < n; i++) {
+				System.out.print("Enter the food: " + i + ":");
+				String food = sc.nextLine();
+				list.add(food);
+			}
+			
+			System.out.println("Original List:-");
+			System.out.println(list);
+			
+			System.out.print("\nEnter the index value u want to change: ");
+			int x = sc.nextInt();
+			sc.nextLine();
+			
+			System.out.print("Enter the new String: ");
+			String s = sc.nextLine();
+			
+			list.set(x, s);
+			System.out.println(list);
+
+		}
+		catch(IndexOutOfBoundsException e) {
+			System.out.println("enter valid array index value!");
+		}
+	}
+
+}
