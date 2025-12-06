@@ -1,0 +1,25 @@
+CREATE DATABASE eshop CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+SHOW DATABASES;
+CREATE USER 'eshopuser'@'localhost' IDENTIFIED BY 'eshoppass';
+GRANT ALL PRIVILEGES ON eshop.* TO 'eshopuser'@'localhost';
+FLUSH PRIVILEGES;
+drop table users_roles;
+use eshop;
+show tables from eshop;
+drop table users_roles;
+CREATE TABLE users_roles (
+    user_id BIGINT NOT NULL,
+    role_id INT NOT NULL,
+    PRIMARY KEY (user_id, role_id),
+
+    CONSTRAINT fk_users_roles_user
+        FOREIGN KEY (user_id)
+        REFERENCES users(user_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_users_roles_role
+        FOREIGN KEY (role_id)
+        REFERENCES roles(role_id)
+        ON DELETE CASCADE
+) ENGINE=InnoDB;
+INSERT INTO roles (name) VALUES ('USER'), ('ADMIN');
